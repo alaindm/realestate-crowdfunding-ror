@@ -55,12 +55,9 @@
             </div>
             
         <% if logged_in? %>
-            <div class="ui item">
-                <%= link_to "Users", '#', class:"item" %>
-            </div>
             <div class="ui simple dropdown item">Account <i class="dropdown icon"></i>
                 <%= link_to "Profile", current_user, class:"item" %>
-                <%= link_to "Settings", '#', class:"item" %>
+                <%= link_to "Settings", edit_user_path(current_user), class:"item" %>
                 <%= link_to "Log out", logout_path, method: "delete", class:"item" %>
             </div>
         <% else %>
