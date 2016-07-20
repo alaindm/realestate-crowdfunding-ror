@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715200122) do
+ActiveRecord::Schema.define(version: 20160719223723) do
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
@@ -20,6 +20,37 @@ ActiveRecord::Schema.define(version: 20160715200122) do
     t.string   "email"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "investments", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "project_id"
+    t.decimal  "request_amount"
+    t.decimal  "deposit_amount"
+    t.date     "deposit_date"
+    t.string   "status"
+    t.binary   "bond_document"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+    t.index ["project_id"], name: "index_investments_on_project_id"
+    t.index ["user_id", "project_id", "created_at"], name: "index_investments_on_user_id_and_project_id_and_created_at"
+    t.index ["user_id"], name: "index_investments_on_user_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "name"
+    t.string   "project_type"
+    t.decimal  "offering_value"
+    t.decimal  "rate"
+    t.text     "description"
+    t.decimal  "funded"
+    t.string   "location"
+    t.string   "developer"
+    t.date     "deadline"
+    t.integer  "term"
+    t.string   "file"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
   end
 
   create_table "users", force: :cascade do |t|

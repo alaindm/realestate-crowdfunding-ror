@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  offering_value: 9.99
+  rate: 9.99
+  description: MyText
+  funded: 9.99
+  location: MyString
+  developer: MyString
+  deadline: 2016-07-19
+  term: 1
+  file: MyString
+
+two:
+  name: MyString
+  type: 
+  offering_value: 9.99
+  rate: 9.99
+  description: MyText
+  funded: 9.99
+  location: MyString
+  developer: MyString
+  deadline: 2016-07-19
+  term: 1
+  file: MyString

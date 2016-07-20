@@ -1,0 +1,57 @@
+<% @projects.each do |project| %>
+      <tr>
+        <td><%= project.name %></td>
+        <td><%= project.rate %></td>
+        <td><%= link_to 'Show', project_path(:id) %></td>
+      </tr>
+<% end %>
+
+
+
+<div class="ui main relaxed container stackable">
+        <h3 class="ui horizontal divider header">
+    <i class="bar database icon"></i>
+    Projetos em captação  </h3>
+
+        <div class="ui card">
+            <div class="image">
+                <%= image_tag("minimall.PNG", :alt => "Ilustração de mini mall") %>
+            </div>
+            <div class="content">
+                <a class="header">Mini Mall</a>
+                <div class="meta">
+                    <span class="date">Rodovia Rio-Santos, Ubatuba, SP</span>
+                </div>
+                <div class="description">
+                    <p>Desenvolvimento e construção</p>
+                    <p>5 lojas, 12 vagas de estacionamento</p>
+                    <p>Terreno em garantia</p>
+                </div>
+                <div class="ui inverted divider"></div>
+                <div class="ui grid">
+                    <div class="ui twelve wide column">
+                        <p>Oferta de investimento</p>
+                        <h5>R$ 900.000</h5>
+                    </div>
+                    <div class="ui four wide column">
+                        <p>Taxa</p>
+                        <h5>22%</h5>
+                    </div>
+                </div>
+
+            </div>
+            <div class="extra content">
+                <a>
+                    <div class="ui tiny green active progress" data-percent="32" id="projeto1">
+                        <div class="bar"></div>
+                        <div class="label">32% Captado</div>
+                    </div>
+                </a>
+            </div>
+            <div class="extra content">
+                <a>
+                    <button id=botaoprojeto class="ui blue button">Ver Detalhes</button>
+                </a>
+            </div>
+        </div>
+    </div>

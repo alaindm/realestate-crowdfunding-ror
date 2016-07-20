@@ -1,0 +1,24 @@
+<% provide(:title, 'Painel de Controle' ) %>
+
+<%= render 'shared/user_info' %>
+
+<% unless documentation_ready? %>
+  <%= render 'shared/user_docs' %>
+<% end %>
+
+<h1>Meus Investimentos</h1>
+<h2>Quantidade de Investmentos: <%= @user.investments.count %> </h2>
+<div>
+    <% if @user.investments.any? %>
+        <table>
+            <tr>
+            <th>Data</th>
+            <th>Projeto</th>
+            <th>Valor da Reserva</th>
+            <th>Status</th>        
+            <th>Valor Investido</th>
+        </tr>
+              <%= render @investment_list %>
+        </table>
+    <% end %>    
+</div>

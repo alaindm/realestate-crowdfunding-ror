@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   root 'pages#home'
   
   get '/imobank', to: 'pages#imobank'
+  get '/painel-de-controle', to: 'pages#control_panel'
   get '/cadastrar', to: 'users#new'
-  
   post '/signup',  to: 'users#create'
   
   resources :users
-  resources :account_activations, only: [:edit]
+  resources :investments, only: [:new, :create]
+  resources :projects, only: [:show, :index]
+  resources :account_activations, only: [:edit, :show]
   resources :password_resets,     only: [:new, :create, :edit, :update]
   
   get    '/login',   to: 'sessions#new'
