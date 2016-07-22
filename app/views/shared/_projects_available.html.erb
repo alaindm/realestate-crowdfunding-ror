@@ -1,12 +1,4 @@
 <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.name %></td>
-        <td><%= project.rate %></td>
-        <td><%= link_to 'Show', project_path(:id) %></td>
-      </tr>
-<% end %>
-
-
 
 <div class="ui main relaxed container stackable">
         <h3 class="ui horizontal divider header">
@@ -18,24 +10,24 @@
                 <%= image_tag("minimall.PNG", :alt => "Ilustração de mini mall") %>
             </div>
             <div class="content">
-                <a class="header">Mini Mall</a>
+                <a class="header"> <%= project.name %> </a>
                 <div class="meta">
-                    <span class="date">Rodovia Rio-Santos, Ubatuba, SP</span>
+                    <span class="date"> <%= project.location %> </span>
                 </div>
                 <div class="description">
-                    <p>Desenvolvimento e construção</p>
-                    <p>5 lojas, 12 vagas de estacionamento</p>
-                    <p>Terreno em garantia</p>
+                    <p> <%= project.project_type %> </p>
+                    <p> <%= project.description %> </p>
+                    <p> Terreno em garantia </p>
                 </div>
                 <div class="ui inverted divider"></div>
                 <div class="ui grid">
                     <div class="ui twelve wide column">
-                        <p>Oferta de investimento</p>
-                        <h5>R$ 900.000</h5>
+                        <p> Oferta de investimento </p>
+                        <h5> <%= project.offering_value %> </h5>
                     </div>
                     <div class="ui four wide column">
                         <p>Taxa</p>
-                        <h5>22%</h5>
+                        <h5> <%= project.rate %> </h5>
                     </div>
                 </div>
 
@@ -44,14 +36,14 @@
                 <a>
                     <div class="ui tiny green active progress" data-percent="32" id="projeto1">
                         <div class="bar"></div>
-                        <div class="label">32% Captado</div>
+                        <div class="label"> <%= project.funded %> Captado</div>
                     </div>
                 </a>
             </div>
             <div class="extra content">
-                <a>
-                    <button id=botaoprojeto class="ui blue button">Ver Detalhes</button>
-                </a>
+                <%= link_to "Ver Detalhes", project_path(project.id), :class=>"ui blue button" %>
             </div>
         </div>
     </div>
+
+<% end %>

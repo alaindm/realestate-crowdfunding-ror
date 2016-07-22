@@ -1,10 +1,8 @@
+<!-- Basic user data -->
 <% if logged_in? %>
-  <%= @user.name %> , <%= @user.email %>, <!-- CPF, status da conta, -->
+  <%= @user.name %> , <%= @user.email %>, <%= @user.cpf_file? %>,<!-- CPF, status da conta, -->
   <%= link_to "Atualizar Dados", edit_user_path(current_user), class:"item" %>
   <%= link_to "Log out", logout_path, method: "delete", class:"item" %>
-  
-  <%= render 'shared/user_docs' %>
-  
 <% else %>
   <%= link_to "Log in", login_path %>
 <% end %>

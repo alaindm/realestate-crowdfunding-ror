@@ -1,7 +1,10 @@
 class PagesController < ApplicationController
-  before_action :logged_in_user, only: [:control_panel] 
+  include UsersHelper
   
+  before_action :logged_in_user, only: [:control_panel] 
+      
   def home
+    @projects = Project.all
   end
 
   def imobank

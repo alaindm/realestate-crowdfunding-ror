@@ -1,10 +1,9 @@
 <% provide(:title, 'Painel de Controle' ) %>
 
-<%= render 'shared/user_info' %>
+<h1>APAGAR</h1><h1>APAGAR</h1>
 
-<% unless documentation_ready? %>
-  <%= render 'shared/user_docs' %>
-<% end %>
+<%= render 'shared/user_info' %>
+<%= render 'shared/user_docs' %>
 
 <h1>Meus Investimentos</h1>
 <h2>Quantidade de Investmentos: <%= @user.investments.count %> </h2>

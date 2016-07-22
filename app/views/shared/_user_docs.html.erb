@@ -1,0 +1,6 @@
+<!-- Show the option to upload a document if the document is not in the database -->
+<% unless documents_ready? %>
+  <%= link_to "CPF", @user.cpf_file.url if @user.cpf_file? %>
+<% end %>
+ 
+

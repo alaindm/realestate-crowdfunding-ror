@@ -1,0 +1,11 @@
+<% provide(:title, @project.name) %>
+
+
+<h1> <%= @project.name %> </h1>
+<h1> <%= @project.project_type %> </h1>
+<h1> <%= @project.rate %> </h1>
+<h1> <%= @project.location %> </h1>
+<h1> <%= @project.developer %> </h1>
+<h1> <%= @project.offering_value %> </h1>
+<h1> <%= @project.description %> </h1>
+<%= link_to "Fazer reserva de investimento", new_investment_path(:project_id => "1"), :class=>"ui red button" %>

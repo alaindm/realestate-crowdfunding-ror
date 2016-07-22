@@ -3,8 +3,7 @@
   <head>
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all',
-                                              'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
@@ -15,101 +14,92 @@
 
     <div class="ui fixed menu">
         <div class="ui container">
-            <a href="#" class="header item">
-                <img class="logo" src="/app/assets/images/logosmall.png">
-
-            </a>
-
-            <div class="ui simple dropdown item">
-                Investir <i class="dropdown icon"></i>
+            <%= link_to root_path, class: "header item" do %>
+            <%= image_tag "logosmall",  class: "logo", style: "width: 12em" %>
+            <% end %>
+            
+            <div class="ui simple dropdown item"> Investir <i class="dropdown icon"></i>
                 <div class="menu">
-                    <a class="item" href="#">Como Funciona</a>
-
-                    <a class="item" href="#">Projetos Disponíveis</a>
-
-                    <a class="item" href="#">Perguntas Frequentes</a>
+                    <%= link_to "Como Funciona", root_path, class: "item" %>
+                    <%= link_to "Projetos Disponíveis", projects_path, class: "item" %>
+                    <%= link_to "Perguntas Frequentes", root_path, class: "item" %>
                 </div>
             </div>
 
             <div class="ui simple dropdown item">
                 Levantar Capital <i class="dropdown icon"></i>
                 <div class="menu">
-
-                    <a class="item" href="#">Como Funciona</a>
-
-                    <a class="item" href="#">Inscreva seu Projeto</a>
-
-                    <a class="item" href="#">Perguntas Frequentes</a>
+                    <%= link_to "Como Funciona", root_path, class: "item" %>
+                    <%= link_to "Inscreva seu Projeto", candidates_new_path, class: "item" %>
+                    <%= link_to "Perguntas Frequentes", root_path, class: "item" %>
                 </div>
             </div>
 
-            <div class="ui simple dropdown item">
-                Saiba Mais <i class="dropdown icon"></i>
+            <div class="ui simple dropdown item">Saiba Mais<i class="dropdown icon"></i>
                 <div class="menu">
                     <%= link_to "O Imobank", imobank_path, class:"item" %>
-                    
-                    <a class="item" href="#">Artigos</a>
-
-                    <a class="item" href="#">Modelo de Negócio</a>
+                    <%= link_to "Artigos", root_path, class: "item" %>
+                    <%= link_to "Conheça o Modelo de Negócio", root_path, class: "item" %>
                 </div>
             </div>
             
         <% if logged_in? %>
-            <div class="ui simple dropdown item">Account <i class="dropdown icon"></i>
-                <%= link_to "Meus Investimentos", painel_de_controle_path, class:"item" %>
-                <%= link_to "Log out", logout_path, method: "delete", class:"item" %>
-            </div>
-        <% else %>
-            <div class="ui item">
-                <%= link_to "Log in", login_path %>
-            </div>
-        <% end %>
-
         
-            
+            <div class="ui simple dropdown item"><i class="user icon"></i> <strong>Minha Conta</strong><i class="dropdown icon"></i>
+                        <div class="menu">   
+                            <%= link_to "Meus Investimentos", painel_de_controle_path, class:"item" %>
+                            <%= link_to "Sair", logout_path, method: "delete", class:"item" %>
+                        </div>
+            </div>
+        
+        <% else %>
             <div class="right item">
                 <div class="ui buttons">
-                    <button class="ui button">Login</button>
+                    <%= link_to "Login", login_path, :class=>"ui button" %>
                     <div class="or" data-text="ou"></div>
-                    <button class="ui positive button">Abrir Conta</button>
+                    <%= link_to "Abrir Conta", cadastrar_path, :class=>"ui positive button" %>
                 </div>
             </div>
+        <% end %>
+        
         </div>
     </div>
+    
     <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
+    
     <%= yield %>
+    
     <div class="ui inverted vertical footer segment">
         <div class="ui center aligned container">
             <div class="ui stackable inverted divided grid">
                 <div class="five wide column">
                     <h4 class="ui inverted header">Entre em contato</h4>
                     <div class="ui inverted link list">
-                        <a href="#" class="item">contato@imobank.com.br</a>
-                        <a href="#" class="item">(11) 3050 9050</a>
-                        <a href="#" class="item">Seg-Sex 8:00 às 19:00h</a>
+                        <%= mail_to "contato@imobank.com.br", class: "item" do %> contato@imobank.com.br <% end %>
+                        <a class="item">(11) 98563 9091</a>
+                        <a class="item">Seg-Sex 9:00 às 18:00h</a>
                     </div>
                 </div>
                 <div class="five wide column">
                     <h4 class="ui inverted header">Imobank</h4>
                     <div class="ui inverted link list">
-                        <a href="#" class="item">O Imobank</a>
-                        <a href="#" class="item">Trabalhe conosco</a>
+                        <%= link_to "O Imobank", imobank_path, class: "item" %>
+                        <%= link_to "Trabalhe Conosco", root_path, class: "item" %>
                     </div>
                 </div>
                 <div class="six wide column">
                     <h4 class="ui inverted header">Informações Legais</h4>
                     <div class="ui inverted link list">
-                        <a href="#" class="item">Termos do Serviço</a>
-                        <a href="#" class="item">Política de Privacidade</a>
-                        <a href="#" class="item">Instruçao CVM nº 400/2003</a>
+                        <%= link_to "Termos do Serviço", root_path, class: "item" %>
+                        <%= link_to "Política de Privacidade", root_path, class: "item" %>
+                        <%= link_to "Instruçao CVM nº 400/2003", root_path, class: "item" %>
                     </div>
                 </div>
 
             </div>
         </div>
     </div>
-    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

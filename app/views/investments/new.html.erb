@@ -1,0 +1,18 @@
+<% provide(:title, 'Reserva de Investimento') %>
+<h1>Reserva de Investidor</h1>
+
+<% if logged_in? %>
+    <span><%= pluralize(current_user.investments.count, "Investimento") %></span>
+    <h3>Investindo em: <%= @investment.project_id %> </h3>
+
+    <%= form_for(@investment) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+      
+        <%= f.hidden_field :project_id, :project_id => params[:project_id] %>
+        <%= f.label :request_amount, "Valor do Investimento" %>
+        <%= f.text_field :request_amount, class: 'form-control' %>
+        
+        
+        <%= f.submit "Confirmar reserva de investimento", class: "ui green inverted button" %>
+    <% end %>
+<% end %>

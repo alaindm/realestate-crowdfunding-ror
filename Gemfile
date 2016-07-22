@@ -10,6 +10,7 @@ gem 'jquery-rails', '4.1.1'
 gem 'turbolinks',   '5.0.0'
 gem 'jbuilder',     '2.4.1'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
+gem 'carrierwave',  '0.11.2'
 
 group :development, :test do
   gem 'sqlite3', '1.3.11'

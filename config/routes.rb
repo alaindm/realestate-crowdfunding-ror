@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/painel-de-controle', to: 'pages#control_panel'
   get '/cadastrar', to: 'users#new'
   post '/signup',  to: 'users#create'
+  get '/instrucoes-pos-reserva', to: 'investments#instructions'
   
   resources :users
   resources :investments, only: [:new, :create]
