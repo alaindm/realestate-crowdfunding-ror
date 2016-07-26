@@ -1,0 +1,101 @@
+<script>
+$(document)
+    .ready(function() {
+        $('.ui.accordion')
+            .accordion();
+        $('.ui.secondary.pointing.menu .item').tab();
+            });
+</script>
+
+    
+<div class="ui container">
+    <h1>Empreendedores</h1>
+    <h2 class="header"><i class="info circle icon"></i>Perguntas Frequentes</h2>
+    <div class="ui divider">
+    </div>
+    
+        <div class="ui pointing secondary menu">
+            <a class="item active" data-tab="1">Sobre o serviço</a>
+            <a class="item" data-tab="2">Captação</a>
+            <a class="item" data-tab="3">Jurídico-Financeiro</a>
+        </div>
+
+        <div class="ui tab active" data-tab="1">
+            <div class="ui styled accordion fluid">
+                <div class="active title">
+                    <i class="dropdown icon"></i> O que é o Imobank e como funciona?
+                </div>
+                <div class="active content">
+                    <p>Paragrafo de Resposta.</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i> Como começo a investir pelo Imobank?
+                </div>
+                <div class="content">
+                    <p>Paragrafo de Resposta.</p>
+                    </div>
+                <div class="title">
+                    <i class="dropdown icon"></i> Quem é o Imobank?
+                </div>
+                <div class="content">
+                    <p>Resposta 1</p>
+                    <p>Outro paragrafo de resposta </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="ui tab" data-tab="2">
+            <div class="ui styled accordion fluid">
+                <div class="title">
+                    <i class="dropdown icon"></i> Como captar?
+                </div>
+                <div class="content">
+                    <p>lorem jjkfksl jklfjkladjklf j jkfadfjksajk fjff j jfklsdkl</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i> What kinds of Investiemnt?
+                </div>
+                <div class="content">
+                    <p>gfdg fdsg s gsdfg fdg sdfgs gfsdg sdfgsdfgdfgsfdg</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i> How do you acquire a dog?
+                </div>
+                <div class="content">
+                    <p>bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla </p>
+                    <p>ggfd g gdfgg dfgsdgsfgdf gfgsdfg fgsdfg.</p>
+                </div>
+            </div>
+        </div>
+            
+        
+        <div class="ui tab active" data-tab="3">
+            <div class="ui styled accordion fluid">
+                <div class="title">
+                    <i class="dropdown icon"></i> O que é o Imobank e como funciona?
+                </div>
+                <div class="content">
+                    <p>Paragrafo de Resposta.</p>
+                </div>
+                <div class="title">
+                    <i class="dropdown icon"></i> Como começo a investir pelo Imobank?
+                </div>
+                <div class="content">
+                    <p>Paragrafo de Resposta.</p>
+                    </div>
+                <div class="title">
+                    <i class="dropdown icon"></i> Quem é o Imobank?
+                </div>
+                <div class="content">
+                    <p>Resposta 1</p>
+                    <p>Outro paragrafo de resposta </p>
+                </div>
+            </div>
+        </div>
+
+
+ 
+
+    <br>
+    <p><strong>Precisa de mais detalhes?</strong> Entre em contato por e-mail: <%= mail_to "contato@imobank.com.br", class: "item" do %> contato@imobank.com.br <% end %></p>
+</div>

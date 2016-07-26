@@ -1,7 +1,7 @@
-<div class="ui main relaxed grid container stackable">
+    <div class="ui main relaxed grid container stackable">
         <div class="ui ten wide column">
             <p>IMOBANK - PLATAFORMA DE DESENVOLVIMENTO IMOBILIÁRIO</p>
-            <h1>Investimentos em construção, incorporação, leilões e reformas para venda</h1>
+            <h1>Investimentos em construção, leilões e reformas para venda</h1>
             <div class="ui horizontal segments">
                 <div class="ui segment">
                     Invista online através da plataforma
@@ -19,14 +19,14 @@
 
         </div>
         <div class="ui three wide column">
-            <img src="images/mapa.png" alt="Mapa do Brasil" height="160">
+            <%= image_tag "mapa",  height: "160"%>
             <p><strong> Acesso à investimentos em todo território nacional</strong></p>
-            <button class="ui fluid green button">Abrir Conta</button>
+            <%= link_to "Abrir Conta", cadastrar_path, :class=>"ui fluid green button" %>
         </div>
         <div class="ui three wide column">
-            <img src="images/mortgage.jpg" alt="Casa feita com notas de dolar" height="160">
+            <%= image_tag "mortgage",  height: "160"%>
             <p><strong>Precisa de capital para o seu projeto de construção?</strong></p>
-            <button class="ui fluid blue button"> Saiba Mais </button>
+            <%= link_to "Saiba Mais", root_path, :class=>"ui fluid blue button" %>
         </div>
 
         <button class="ui circular icon button">
@@ -37,12 +37,9 @@
     <%= render 'shared/projects_available' %>
 
     <div class="ui container">
-        <h3 class="ui horizontal divider header">
-  <i class="spinner chart icon"></i>
-  Vantagens de investir via Imobank
-</h3>
+        <h3 class="ui horizontal divider header">Vantagens de investir via Imobank</h3>
         <div class="ui equal width grid relaxed stackable">
-            <div class="ui column segment stacked">
+            <div class="ui column segment">
                 <i class="laptop icon huge"></i>
                 <h4 class="ui header">Investimento totalmente online</h4>
             </div>
@@ -67,36 +64,34 @@
 
 
         <h3 class="ui horizontal divider header">
-  <i class="angle double right chart icon"></i>
+ 
   Processo de Investimento
 </h3>
         <div class="ui equal width grid stackable">
             <div class="column">
-                <img class="ui fluid image" src="images/p1.svg">
+                <%= image_tag "p1.svg",  class: "ui fluid image" %>
             </div>
             <div class="column">
-                <img class="ui fluid image" src="images/p2.svg">
+                <%= image_tag "p2.svg",  class: "ui fluid image" %>
             </div>
             <div class="column">
-                <img class="ui fluid image" src="images/p3.svg">
+                <%= image_tag "p3.svg",  class: "ui fluid image" %>
             </div>
             <div class="column">
-                <img class="ui fluid image" src="images/p4.svg">
+                <%= image_tag "p4.svg",  class: "ui fluid image" %>
             </div>
             <div class="column">
-                <img class="ui fluid image" src="images/p5.svg">
+                <%= image_tag "p5.svg",  class: "ui fluid image" %>
             </div>
         </div>
 
         <div class="ui segment piled">
-            <h2 class="ui header">Fique informado sobre nossas oportunidades de investimento no Imobank</h2>
+            <h2 class="ui header">Quer ser informado sobre novas oportunidades de investimento do Imobank?</h2>
             <div class="ui action input">
-                <input type="email" placeholder="Seu e-mail">
-                <button class="ui red labeled icon button">
-
-                    <i class="mail icon"></i> Inscrever
-                </button>
-
+                <%= form_for @user do |f| %>
+                <%= f.email_field :email, class: 'form-control' %>
+                <%= f.submit "Cadastre-se!", method:"GET", class: 'ui red button'  %>
+                <% end %>
             </div>
         </div>
     </div>

@@ -20,26 +20,25 @@
             
             <div class="ui simple dropdown item"> Investir <i class="dropdown icon"></i>
                 <div class="menu">
-                    <%= link_to "Como Funciona", root_path, class: "item" %>
+                    <%= link_to "Como Funciona", como_funciona_para_o_investidor_path, class: "item" %>
                     <%= link_to "Projetos Disponíveis", projects_path, class: "item" %>
-                    <%= link_to "Perguntas Frequentes", root_path, class: "item" %>
+                    <%= link_to "Perguntas Frequentes", perguntas_frequentes_do_investidor_path, class: "item" %>
                 </div>
             </div>
 
             <div class="ui simple dropdown item">
                 Levantar Capital <i class="dropdown icon"></i>
                 <div class="menu">
-                    <%= link_to "Como Funciona", root_path, class: "item" %>
+                    <%= link_to "Como Funciona", como_funciona_para_o_construtor_path, class: "item" %>
                     <%= link_to "Inscreva seu Projeto", candidates_new_path, class: "item" %>
-                    <%= link_to "Perguntas Frequentes", root_path, class: "item" %>
+                    <%= link_to "Perguntas Frequentes", perguntas_frequentes_do_construtor_path, class: "item" %>
                 </div>
             </div>
 
             <div class="ui simple dropdown item">Saiba Mais<i class="dropdown icon"></i>
                 <div class="menu">
-                    <%= link_to "O Imobank", imobank_path, class:"item" %>
-                    <%= link_to "Artigos", root_path, class: "item" %>
-                    <%= link_to "Conheça o Modelo de Negócio", root_path, class: "item" %>
+                    <%= link_to "O Imobank", sobre_a_plataforma_path, class:"item" %>
+                    <%= link_to "Conheça o Modelo de Negócio", modelo_de_negocio_path, class: "item" %>
                 </div>
             </div>
             
@@ -65,12 +64,13 @@
         </div>
     </div>
     
+    <div class="ui main relaxed grid container stackable">
     <% flash.each do |message_type, message| %>
     <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
     
     <%= yield %>
-    
+    </div>
     <div class="ui inverted vertical footer segment">
         <div class="ui center aligned container">
             <div class="ui stackable inverted divided grid">
@@ -85,16 +85,17 @@
                 <div class="five wide column">
                     <h4 class="ui inverted header">Imobank</h4>
                     <div class="ui inverted link list">
-                        <%= link_to "O Imobank", imobank_path, class: "item" %>
-                        <%= link_to "Trabalhe Conosco", root_path, class: "item" %>
+                        <%= link_to "O Imobank", sobre_a_plataforma_path, class: "item" %>
+                        <%= link_to "Trabalhe Conosco", trabalhe_conosco_path, class: "item" %>
                     </div>
                 </div>
                 <div class="six wide column">
                     <h4 class="ui inverted header">Informações Legais</h4>
                     <div class="ui inverted link list">
-                        <%= link_to "Termos do Serviço", root_path, class: "item" %>
-                        <%= link_to "Política de Privacidade", root_path, class: "item" %>
-                        <%= link_to "Instruçao CVM nº 400/2003", root_path, class: "item" %>
+                        <%= link_to "Termos do Serviço", termos_do_servico_path, class: "item" %>
+                        <%= link_to "Política de Privacidade", politica_de_privacidade_path, class: "item" %>
+                        <%= link_to "Instruçao CVM nº 400/2003", instrucao_cvm_400_2003_path, class: "item" %>
+                        <%= link_to "Sobre a Transferência Bancária", transferencia_bancaria_path, class: "item" %>
                     </div>
                 </div>
 

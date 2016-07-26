@@ -5,6 +5,7 @@ class PagesController < ApplicationController
       
   def home
     @projects = Project.all
+    @user = User.new
   end
 
   def imobank

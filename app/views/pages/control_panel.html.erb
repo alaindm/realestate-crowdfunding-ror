@@ -1,16 +1,26 @@
 <% provide(:title, 'Painel de Controle' ) %>
+<div class="ui container">
 
-<h1>APAGAR</h1><h1>APAGAR</h1>
+Investidor: nome
+CPF: 
+Quantidade de Investimentos: <%= @user.investments.count %>
+Quantidade de 
 
-<%= render 'shared/user_info' %>
+Mensagens do administrador Imobank:
+if nao
+
+if docs
 <%= render 'shared/user_docs' %>
 
-<h1>Meus Investimentos</h1>
-<h2>Quantidade de Investmentos: <%= @user.investments.count %> </h2>
+
+<div class="ui header">Meus Projetos</div>
+if nao, não existem projetos até agora
+
+<div class="ui header">Meus Investimentos</div>
 <div>
     <% if @user.investments.any? %>
-        <table>
-            <tr>
+        <table class="ui selectable table">
+            <tr class="single line">
             <th>Data</th>
             <th>Projeto</th>
             <th>Valor da Reserva</th>
@@ -20,4 +30,7 @@
               <%= render @investment_list %>
         </table>
     <% end %>    
+    
+    Else nao tem inv ainda
+</div>
 </div>
