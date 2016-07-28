@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   root 'pages#home'
   
   get '/sobre-a-plataforma', to: 'pages#about'
-  get '/trabalhe_conosco', to: 'pages#work_with_us'
+  get '/parceiros', to: 'pages#partners'
   get '/termos-do-servico', to: 'pages#terms_of_service'
   get '/politica-de-privacidade', to: 'pages#privacy_policy'
   get '/instrucao-cvm-400-2003', to: 'pages#cvm_400'

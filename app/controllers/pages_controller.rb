@@ -15,6 +15,7 @@ class PagesController < ApplicationController
     if logged_in?
       @user = current_user
       @investment_list = @user.investments
+      @project_list = @user.projects.distinct
     end
   end
 end

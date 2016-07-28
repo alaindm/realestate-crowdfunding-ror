@@ -1,25 +1,59 @@
 <% provide(:title, 'Painel de Controle' ) %>
 <div class="ui container">
+    <div class="ui grid stackable">
+        <div class="ui eight wide column">
+            <div class="ui blue segment">
+                <div class="ui small header"><%= @user.name %></div>
+                <div class="description"><strong>CPF:</strong><%= @user.email %></div>
+                <div class="description"><strong>Outros Dados:</strong><%= @user.email %></div>
+                <div class="description"><strong>Mais dados:</strong><%= @user.email %></div><br>
+                <div class="ui tiny blue button">Atualizar Dados</div>
+            </div>
+        </div> 
+        <div class="ui eight wide column">
+            <div class="ui basic segment">
+                <div class="ui small center aligned header">Resumo</div><br>
+                <div class="ui three tiny statistics">
+                    <div class="ui statistic">
+                        <div class="value"><%= @user.investments.count %></div>
+                        <div class="label">Investimento</div>
+                    </div>
+                    <div class="ui statistic">
+                        <div class="value"><%= @project_list.count%></div>
+                        <div class="label">Projeto</div>
+                    </div>
+                    <div class="ui statistic">
+                        <div class="value">R$<%= @user.investments.sum(:deposit_amount) %></div>
+                        <div class="label">Investidos</div>
+                    </div>
+                </div>
+            </div>   
+        </div>
+    </div>
 
-Investidor: nome
-CPF: 
-Quantidade de Investimentos: <%= @user.investments.count %>
-Quantidade de 
-
-Mensagens do administrador Imobank:
-if nao
-
-if docs
 <%= render 'shared/user_docs' %>
 
-
 <div class="ui header">Meus Projetos</div>
-if nao, não existem projetos até agora
+    <% if @user.investments.any? %>
+        <table class="ui blue selectable table">
+            <tr class="single line">
+            <th>Nome</th>
+            <th>Tipo</th>
+            <th>Taxa</th>
+            <th>Local</th>  
+        </tr>
+              <%= render @project_list %>
+        </table>
+    <% else %>
+        <div class="ui compact floating message"><p>Nenhum investimento realizado.</p></div>
+    <% end %>   
+
+
 
 <div class="ui header">Meus Investimentos</div>
 <div>
     <% if @user.investments.any? %>
-        <table class="ui selectable table">
+        <table class="ui blue selectable table">
             <tr class="single line">
             <th>Data</th>
             <th>Projeto</th>
@@ -29,8 +63,8 @@ if nao, não existem projetos até agora
         </tr>
               <%= render @investment_list %>
         </table>
+    <% else %>
+        <div class="ui compact floating message"><p>Não existem investimentos ou reservas realizadas até o momento.</p></div>
     <% end %>    
-    
-    Else nao tem inv ainda
 </div>
 </div>

@@ -39,6 +39,7 @@
                 <div class="menu">
                     <%= link_to "O Imobank", sobre_a_plataforma_path, class:"item" %>
                     <%= link_to "Conheça o Modelo de Negócio", modelo_de_negocio_path, class: "item" %>
+                    <%= link_to "Parceiros", parceiros_path, class: "item" %>
                 </div>
             </div>
             
@@ -47,6 +48,7 @@
             <div class="ui simple dropdown item"><i class="user icon"></i> <strong>Minha Conta</strong><i class="dropdown icon"></i>
                         <div class="menu">   
                             <%= link_to "Meus Investimentos", painel_de_controle_path, class:"item" %>
+                            <%= link_to "Atualizar Dados", edit_user_path(current_user), class:"item" %>
                             <%= link_to "Sair", logout_path, method: "delete", class:"item" %>
                         </div>
             </div>
@@ -86,7 +88,7 @@
                     <h4 class="ui inverted header">Imobank</h4>
                     <div class="ui inverted link list">
                         <%= link_to "O Imobank", sobre_a_plataforma_path, class: "item" %>
-                        <%= link_to "Trabalhe Conosco", trabalhe_conosco_path, class: "item" %>
+                        <%= link_to "Parceiros", parceiros_path, class: "item" %>
                     </div>
                 </div>
                 <div class="six wide column">
