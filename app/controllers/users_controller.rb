@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
-      flash[:info] = "Please check your email to activate your account."
+      flash[:info] = "Verifique sua caixa de e-mail com a mensagem do Imobank para ativar sua conta."
       redirect_to root_url
     else
       render 'new'

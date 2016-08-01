@@ -9,24 +9,101 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/r29/html5.min.js">
     </script>
     <![endif]-->
+    
+
+    <script>
+      $(document)
+        .ready(function() {
+          $('.ui.sidebar')
+          .sidebar('attach events', '.toc.item')
+          ;
+
+        $('.ui.dropdown')
+        .dropdown()
+        console.log('iniciou')
+        ;
+
+        })
+         ;
+         
+
+    </script>
+      
+    <%= render 'favicon' %>
+    
   </head>
   <body>
-
-    <div class="ui fixed menu">
-        <div class="ui container">
+    
+    
+    <div class="ui vertical sidebar menu left">
             <%= link_to root_path, class: "header item" do %>
             <%= image_tag "logosmall",  class: "logo", style: "width: 12em" %>
             <% end %>
-            
-            <div class="ui simple dropdown item"> Investir <i class="dropdown icon"></i>
+            <div class="ui item">
+            <div class="ui fluid dropdown"> Investir <i class="dropdown icon"></i>
+                <div class="menu">
+                    <%= link_to "Como Funciona", como_funciona_para_o_investidor_path, class: "item" %>
+                    <%= link_to "Projetos Disponíveis", projects_path, class: "item" %>
+                    <%= link_to "Perguntas Frequentes", perguntas_frequentes_do_investidor_path, class: "item" %>
+                </div>
+            </div>    
+            </div>
+            <div class="ui item">
+            <div class="ui fluid dropdown">
+                Levantar Capital <i class="dropdown icon"></i>
+                <div class="menu">
+                    <%= link_to "Como Funciona", como_funciona_para_o_construtor_path, class: "item" %>
+                    <%= link_to "Inscreva seu Projeto", candidates_new_path, class: "item" %>
+                    <%= link_to "Perguntas Frequentes", perguntas_frequentes_do_construtor_path, class: "item" %>
+                </div>
+            </div>
+            </div>
+            <div class="ui item">
+            <div class="ui fluid dropdown">Saiba Mais<i class="dropdown icon"></i>
+                <div class="menu">
+                    <%= link_to "O Imobank", sobre_a_plataforma_path, class:"item" %>
+                    <%= link_to "Conheça o Modelo de Negócio", modelo_de_negocio_path, class: "item" %>
+                    <%= link_to "Parceiros", parceiros_path, class: "item" %>
+                </div>
+            </div>
+            </div>
+            <% if logged_in? %>
+                <div class="ui item">
+                <div class="ui fluid dropdown"><i class="user icon"></i> <strong>Minha Conta</strong><i class="dropdown icon"></i>
+                        <div class="menu">   
+                            <%= link_to "Meus Investimentos", painel_de_controle_path, class:"item" %>
+                            <%= link_to "Atualizar Dados", edit_user_path(current_user), class:"item" %>
+                            <%= link_to "Sair", logout_path, method: "delete", class:"item" %>
+                        </div>
+                </div>
+                </div>
+            <% else %>
+                    <%= link_to "Login", login_path, :class=>"item" %>
+                    <div class="or" data-text="ou"></div>
+                    <%= link_to "Abrir Conta", cadastrar_path, :class=>"item" %>
+
+            <% end %>
+    </div>
+    
+    
+    <div class="ui fixed menu">
+        <div class="ui container">
+                    <a class="toc item mobile only"><i class="sidebar big icon"></i></a>
+            <%= link_to root_path, class: "header item" do %>
+            <%= image_tag "logosmall",  class: "logo", style: "width: 12em" %>
+            <% end %>
+        
+           
+        
+            <div class="ui simple dropdown item monitor only"> Investir <i class="dropdown icon"></i>
                 <div class="menu">
                     <%= link_to "Como Funciona", como_funciona_para_o_investidor_path, class: "item" %>
                     <%= link_to "Projetos Disponíveis", projects_path, class: "item" %>
                     <%= link_to "Perguntas Frequentes", perguntas_frequentes_do_investidor_path, class: "item" %>
                 </div>
             </div>
-
-            <div class="ui simple dropdown item">
+        
+            <div class="ui simple dropdown item monitor only">
                 Levantar Capital <i class="dropdown icon"></i>
                 <div class="menu">
                     <%= link_to "Como Funciona", como_funciona_para_o_construtor_path, class: "item" %>
@@ -35,7 +112,7 @@
                 </div>
             </div>
 
-            <div class="ui simple dropdown item">Saiba Mais<i class="dropdown icon"></i>
+            <div class="ui simple dropdown item monitor only">Saiba Mais<i class="dropdown icon"></i>
                 <div class="menu">
                     <%= link_to "O Imobank", sobre_a_plataforma_path, class:"item" %>
                     <%= link_to "Conheça o Modelo de Negócio", modelo_de_negocio_path, class: "item" %>
@@ -44,17 +121,35 @@
             </div>
             
         <% if logged_in? %>
-        
-            <div class="ui simple dropdown item"><i class="user icon"></i> <strong>Minha Conta</strong><i class="dropdown icon"></i>
-                        <div class="menu">   
-                            <%= link_to "Meus Investimentos", painel_de_controle_path, class:"item" %>
-                            <%= link_to "Atualizar Dados", edit_user_path(current_user), class:"item" %>
-                            <%= link_to "Sair", logout_path, method: "delete", class:"item" %>
-                        </div>
-            </div>
-        
-        <% else %>
             <div class="right item">
+                <script>
+                      $(document)
+        .ready(function() {
+          $('.ui.sidebar')
+          .sidebar('attach events', '.toc.item')
+          ;
+
+        $('.ui.dropdown')
+        .dropdown()
+        ;
+
+        })
+         ;
+                    
+                </script>
+                <div class="ui black buttons monitor only">
+                    <div class="ui button"><i class="user icon"></i>Minha Conta</div>
+                    <div class="ui floating dropdown icon button"><i class="dropdown icon"></i>
+                        <div class="menu">   
+                            <%= link_to painel_de_controle_path, class:"item" do %><i class="line chart icon"></i>Meus Investimentos<% end %>
+                            <%= link_to edit_user_path(current_user), class:"item" do %><i class="refresh chart icon"></i>Atualizar Dados<% end %>
+                            <%= link_to logout_path, method: "delete", class:"item" do %><i class="sign out icon"></i>Sair<% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% else %>
+            <div class="right item monitor only">
                 <div class="ui buttons">
                     <%= link_to "Login", login_path, :class=>"ui button" %>
                     <div class="or" data-text="ou"></div>
@@ -66,13 +161,15 @@
         </div>
     </div>
     
-    <div class="ui main relaxed grid container stackable">
+    <div class="ui main container">
     <% flash.each do |message_type, message| %>
-    <div class="alert alert-<%= message_type %>"><%= message %></div>
+    <div class="ui message <%= message_type %>"><%= message %></div>
     <% end %>
     
     <%= yield %>
+    
     </div>
+    
     <div class="ui inverted vertical footer segment">
         <div class="ui center aligned container">
             <div class="ui stackable inverted divided grid">

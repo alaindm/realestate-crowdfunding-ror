@@ -1,49 +1,48 @@
+<style>
+    #detalhes-button {
+        display: block;
+    }
+</style>
+
 <% @projects.each do |project| %>
 
-<div class="ui main relaxed container stackable">
-        <h3 class="ui horizontal divider header">
-    
-    Projetos em captação  </h3>
-
-        <div class="ui card">
-            <div class="image">
-                <%= image_tag("minimall.PNG", :alt => "Ilustração de mini mall") %>
-            </div>
-            <div class="content">
-                <a class="header"> <%= project.name %> </a>
-                <div class="meta">
-                    <span class="date"> <%= project.location %> </span>
+<div class="ui main container">
+        <div class="ui horizontal divider header">Projetos em captação</div><br>
+        
+        <div class="ui raised centered cards">
+            <div class="card">
+                <div class="image">
+                    <%= image_tag("minimall.PNG", :alt => "Ilustração de mini mall") %>
                 </div>
-                <div class="description">
-                    <p> <%= project.project_type %> </p>
-                    <p> <%= project.description %> </p>
-                    <p> Terreno em garantia </p>
+                <div class="content">
+                    <a class="header"> <%= project.name %> </a>
+                    <div class="meta">
+                        <span class="date"> <%= project.location %> </span>
+                    </div>
+                    <div class="description">
+                        <p> <%= project.project_type %> </p>
+                        <p> <%= project.description %> </p>
+                        <p> Terreno em garantia </p>
+                    </div>
+                    <div class="ui inverted divider"></div>
+                    <div class="ui grid">
+                        <div class="ui twelve wide column">
+                            <p> Oferta de investimento </p>
+                            <h5> <%= project.offering_value %> </h5>
+                        </div>
+                        <div class="ui four wide column">
+                            <p>Taxa</p>
+                            <h5> <%= project.rate %> </h5>
+                        </div>
+                    </div>
                 </div>
-                <div class="ui inverted divider"></div>
-                <div class="ui grid">
-                    <div class="ui twelve wide column">
-                        <p> Oferta de investimento </p>
-                        <h5> <%= project.offering_value %> </h5>
-                    </div>
-                    <div class="ui four wide column">
-                        <p>Taxa</p>
-                        <h5> <%= project.rate %> </h5>
-                    </div>
+                <div class="extra content">
+                    <%= link_to "Ver Detalhes", project_path(project.id), :class=>"ui blue button", :id=>"detalhes-button" %>
                 </div>
-
             </div>
-            <div class="extra content">
-                <a>
-                    <div class="ui tiny green active progress" data-percent="32" id="projeto1">
-                        <div class="bar"></div>
-                        <div class="label"> <%= project.funded %> Captado</div>
-                    </div>
-                </a>
-            </div>
-            <div class="extra content">
-                <%= link_to "Ver Detalhes", project_path(project.id), :class=>"ui blue button" %>
-            </div>
+            
         </div>
+        
     </div>
 
 <% end %>

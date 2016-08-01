@@ -15,6 +15,7 @@ gem 'carrierwave',  '0.11.2'
 group :development, :test do
   gem 'sqlite3', '1.3.11'
   gem 'byebug',  '9.0.0', platform: :mri
+  gem 'rails_real_favicon'
 end
 
 group :development do
