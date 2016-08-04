@@ -1,9 +1,9 @@
 <tr>
-    <td><%=h investment.created_at %></td>
+    <td><%=h (investment.created_at).to_date.strftime("%d/%m/%Y") %></td>
     <td><%=h investment.project.name %></td>
-    <td><%=h investment.request_amount %></td>
+    <td><%=h number_with_precision(investment.request_amount, precision: 2) %></td>
     <td><%=h investment.status %></td>
-    <td><%=h investment.deposit_amount %></td>
+    <td><%=h number_with_precision(investment.deposit_amount, precision: 2) %></td>
     <td><%= link_to 'Ver projeto', project_path(investment.project_id) %></td>
 </tr>
 

@@ -16,15 +16,15 @@
                 <div class="ui three tiny statistics">
                     <div class="ui statistic">
                         <div class="value"><%= @user.investments.count %></div>
-                        <div class="label">Investimento</div>
+                        <div class="label"><%= "Investimento".pluralize(@user.investments.count) %></div>
                     </div>
                     <div class="ui statistic">
-                        <div class="value"><%= @project_list.count%></div>
-                        <div class="label">Projeto</div>
+                        <div class="value"><%= @project_list.count %></div>
+                        <div class="label"><%= "Projeto".pluralize(@project_list.count) %></div>
                     </div>
                     <div class="ui statistic">
-                        <div class="value">R$<%= @user.investments.sum(:deposit_amount) %></div>
-                        <div class="label">Investidos</div>
+                        <div class="value"><%= number_to_currency(@user.investments.sum(:deposit_amount)) %></div>
+                        <div class="label"><%= "Investido".pluralize(@user.investments.sum(:deposit_amount)) %></div>
                     </div>
                 </div>
             </div>   

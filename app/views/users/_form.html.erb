@@ -1,36 +1,60 @@
 <%= form_for(@user, html: { multipart: true, class: "ui form" }) do |f| %>
-  <%= render 'shared/error_messages', object: f.object %>
-    <div class="required field">
-    <%= f.label :name, "Nome Completo" %>
-    <%= f.text_field :name, class: 'form-control' %>
-    </div>
-    <div class="required field">
-    <%= f.label :email, "E-mail" %>
-    <%= f.email_field :email, class: 'form-control' %>
-    </div>
-    <div class="two fields">
-    <div class="required field">
-    <%= f.label :password, "Senha" %>
-    <%= f.password_field :password, class: 'form-control' %>
-    </div>
-    <div class="required field">
-    <%= f.label :password_confirmation, "Confirme sua senha" %>
-    <%= f.password_field :password_confirmation, class: 'form-control' %>
-    </div>
-    </div>
+<%= render 'shared/error_messages', object: f.object %>
+    <div class="ui grid stackable">
+      <div class="eleven wide column">
+        <div class="fourteen wide required field">
+          <%= f.label :name, "Nome Completo" %>
+            <%= f.text_field :name, class: 'form-control' %>
+        </div>
+        <div class="two fields">
+          <div class="ten wide required field">
+            <%= f.label :email, "E-mail" %>
+              <%= f.email_field :email, class: 'form-control' %>
+          </div>
+          <div class="four wide field">
+            <%= f.label :cpf, "C.P.F." %>
+              <%= f.text_field :cpf, class: 'form-control', id: 'cpf' %>
+          </div>
+        </div>
+        <div class="two fields">
+          <div class="four wide required field">
+            <%= f.label :password, "Senha" %>
+              <%= f.password_field :password, class: 'form-control' %>
+          </div>
+          <div class="four wide required field">
+            <%= f.label :password_confirmation, "Confirme sua senha" %>
+              <%= f.password_field :password_confirmation, class: 'form-control' %>
+          </div>
+        </div>
+      
+
+      <!--
     <div class="field">
     <span class="cpf_file">
     <%= f.file_field :cpf_file, accept: 'application/msword,image/jpeg,image/png,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document' %>
     </span>
     </div>
-    <%= f.submit "Enviar", class: "ui red button" %>
-<% end %>
-
-<script type="text/javascript">
-  $('#user_cpf_file').bind('change', function() {
-    var size_in_megabytes = this.files[0].size/1024/1024;
-    if (size_in_megabytes > 5) {
-      alert('Tamanho máximo do arquivo é 5MB. por favor, escolha um arquivo menor.');
-    }
-  });
-</script>
+    -->
+      <% unless @user == current_user %>
+        <%= render 'shared/terms_of_service_checkbox' %>
+          <% end %>
+          
+            
+            <%= f.submit "Enviar", class: "ui red button" %>
+              <% end %>
+                <div class="ui left aligned tiny red header">* Campos obrigatórios</div>
+  </div>
+  </div>
+<script>
+        $(document).ready(function(){
+        $("#cpf").mask("***.***.***-**");
+});
+            </script>
+    <script type="text/javascript">
+      $('#user_cpf_file').bind('change', function() {
+        var size_in_megabytes = this.files[0].size / 1024 / 1024;
+        if (size_in_megabytes > 5) {
+          alert('Tamanho máximo do arquivo é 5MB. por favor, escolha um arquivo menor.');
+        }
+      });
+    </script>

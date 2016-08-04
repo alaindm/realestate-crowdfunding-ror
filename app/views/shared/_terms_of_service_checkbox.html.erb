@@ -1,0 +1,9 @@
+<div class="field">
+    <div class="ui checkbox">
+        <%= check_box_tag(:terms_of_service) %>
+            <%= label_tag "terms_of_service" do %>
+                Estou de acordo com os
+                <%= link_to "termos do serviço", termos_do_servico_path, :target => "_blank" %> do Imobank.
+                    <% end %>
+    </div>
+</div>

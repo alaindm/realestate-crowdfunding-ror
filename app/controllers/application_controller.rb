@@ -9,9 +9,19 @@ class ApplicationController < ActionController::Base
   def logged_in_user
     unless logged_in?
       store_location
-      flash[:danger] = "Please log in."
+      flash[:red] = "Please log in."
       redirect_to login_url
     end
   end
+  
+    
+  def terms_checkbox_checked?
+    if params[:terms_of_service] == '1'
+      true
+    else
+        false
+    end
+  end
+  
   
 end

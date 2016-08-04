@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   post 'candidates/create'
   get '/proposta-de-projeto', to: 'candidates#new'
   
+  # resource :user, :controller => :users
+  
   root 'pages#home'
   
   get '/sobre-a-plataforma', to: 'pages#about'
@@ -23,6 +25,7 @@ Rails.application.routes.draw do
   
   get '/cadastrar', to: 'users#new'
   post '/signup',  to: 'users#create'
+
   
   get '/instrucoes-pos-reserva', to: 'investments#instructions'
   

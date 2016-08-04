@@ -12,7 +12,7 @@ class InvestmentsController < ApplicationController
   def create
     @investment = current_user.investments.build(investment_params)
     if @investment.save
-      flash[:success] = "Reserva de investimento realizada!"
+      flash[:gren] = "Reserva de investimento realizada!"
       redirect_to instrucoes_pos_reserva_path
     else
       render 'new'

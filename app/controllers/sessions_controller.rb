@@ -14,11 +14,11 @@ class SessionsController < ApplicationController
       else
         message  = "Conta não está ativa."
         message += "Verifique em sua caixa de e-mail a mensagem com o o link de ativação."
-        flash[:warning] = message
+        flash[:yellow] = message
         redirect_to root_url
       end
     else
-      flash.now[:danger] = 'E-mail inválido ou Senha incorreta' # Not quite right!
+      flash.now[:red] = 'E-mail inválido ou Senha incorreta' # Not quite right!
       render 'new'
     end
   end

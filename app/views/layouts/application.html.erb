@@ -163,9 +163,10 @@
     
     <div class="ui main container">
     <% flash.each do |message_type, message| %>
+    <br>
     <div class="ui message <%= message_type %>"><%= message %></div>
+    <br>
     <% end %>
-    
     <%= yield %>
     
     </div>

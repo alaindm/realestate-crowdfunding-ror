@@ -1,7 +1,7 @@
 <tr>
     <td><%=h project.name %></td>
     <td><%=h project.project_type %></td>
-    <td><%=h project.rate %></td>
+    <td><%=h number_to_percentage(project.rate, precision: 2) %></td>
     <td><%=h project.location %></td>
     <td><%= link_to 'Ver projeto', project_path(project.id) %></td>
 </tr>

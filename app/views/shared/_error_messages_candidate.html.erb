@@ -1,7 +1,7 @@
 <% if @candidate.errors.any? %>
   <div class="ui form error">
     <div class="ui error message">
-      The form contains <%= pluralize(@candidate.errors.count, "error") %>.
+      O formulário <%= "contém".pluralize(@candidate.errors.count) %> <%= @candidate.errors.count %> <%= "erro".pluralize(@candidate.errors.count) %>.
     
     <ul>
     <% @candidate.errors.full_messages.each do |msg| %>

@@ -7,10 +7,13 @@ class UsersController < ApplicationController
   end
   
   def show
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+    @user = current_user
+    
   end
   
   def create
+  if terms_checkbox_checked?
     @user = User.new(user_params)
     if @user.save
       @user.send_activation_email
@@ -19,16 +22,22 @@ class UsersController < ApplicationController
     else
       render 'new'
     end
+  else
+    @user = User.new(user_params)
+    flash[:red] = "É necessário aceitar os termos do serviço do Imobank."
+    render 'new'
+  end
   end
   
   def edit
-    @user = User.find(params[:id])
+    # @user = User.find(params[:id])
+    @user = current_user
   end
   
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-      flash[:success] = "Dados atualizados"
+      flash[:green] = "Dados atualizados"
       redirect_to painel_de_controle_path
     else
       render 'edit'
@@ -37,7 +46,7 @@ class UsersController < ApplicationController
   
   private
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation, :cpf_file)
+      params.require(:user).permit(:name, :email, :password, :password_confirmation, :cpf)
     end
 
 

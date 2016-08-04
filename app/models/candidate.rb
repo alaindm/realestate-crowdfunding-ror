@@ -5,5 +5,6 @@ class Candidate < ApplicationRecord
   validates :email, presence: true, length: { maximum: 255 }, format: { with: VALID_EMAIL_REGEX }
   validates :phone,  presence: true
   validates :description,  presence: true, length: { maximum: 5000 }
+  # validates :terms_of_service, acceptance: true, message: 'É necessário aceitar os Termos do Serviço'
 
 end

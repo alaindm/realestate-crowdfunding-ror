@@ -5,11 +5,17 @@ class CandidatesController < ApplicationController
   end
   
   def create
-    @candidate = Candidate.new(candidate_params)
-    if @candidate.save
-      flash[:info] = "Proposta de projeto enviada para análise. Em breve entraremos em contato. Obrigado."
-      redirect_to root_url # redirecionar para levantar capital
+    if terms_checkbox_checked?
+      @candidate = Candidate.new(candidate_params)
+      if @candidate.save
+        flash[:blue] = "Proposta de projeto enviada para análise. Em breve entraremos em contato. Obrigado."
+        redirect_to como_funciona_para_o_investidor_url 
+      else
+        render 'new'
+      end
     else
+      @candidate = Candidate.new(candidate_params)
+      flash[:red] = "É necessário aceitar os termos do serviço do Imobank."
       render 'new'
     end
   end
@@ -18,5 +24,5 @@ class CandidatesController < ApplicationController
     def candidate_params
       params.require(:candidate).permit(:name, :email, :phone, :description, :company)
     end
-  
+
 end
