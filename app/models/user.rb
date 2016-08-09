@@ -12,28 +12,28 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   validates :password, presence: true, length: { minimum: 6 }, allow_nil: true
-  validates :cpf, length: { maximum: 12 }
+  validates :cpf, length: { maximum: 14 }
   validate :doc_size
-  
 
-  
+
+
     # Returns the hash digest of the given string.
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
                                                   BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
-  
+
     # Returns a random token.
   def User.new_token
     SecureRandom.urlsafe_base64
   end
-  
+
   def remember
     self.remember_token = User.new_token
     update_attribute(:remember_digest, User.digest(remember_token))
   end
-  
+
   # Returns true if the given token matches the digest.
   def authenticated?(attribute, token)
     digest = send("#{attribute}_digest")
@@ -44,8 +44,8 @@ class User < ApplicationRecord
   # Forgets a user.
   def forget
     update_attribute(:remember_digest, nil)
-  end  
-  
+  end
+
     # Activates an account.
   def activate
     update_attribute(:activated,    true)
@@ -56,7 +56,7 @@ class User < ApplicationRecord
   def send_activation_email
     UserMailer.account_activation(self).deliver_now
   end
-  
+
   # Sets the password reset attributes.
   def create_reset_digest
     self.reset_token = User.new_token
@@ -67,13 +67,13 @@ class User < ApplicationRecord
   # Sends password reset email.
   def send_password_reset_email
     UserMailer.password_reset(self).deliver_now
-  end  
+  end
 
   # Returns true if a password reset has expired.
   def password_reset_expired?
     reset_sent_at < 2.hours.ago
   end
-  
+
   private
 
     # Converts email to all lower-case.
@@ -85,8 +85,8 @@ class User < ApplicationRecord
     def create_activation_digest
       self.activation_token  = User.new_token
       self.activation_digest = User.digest(activation_token)
-    end  
-    
+    end
+
     # Validates the size of an uploaded cpf_file.
     def doc_size
       if cpf_file.size > 5.megabytes
