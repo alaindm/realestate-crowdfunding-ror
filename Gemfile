@@ -35,7 +35,11 @@ group :test do
 end
 
 group :production do
+<<<<<<< HEAD
   gem 'pg'
+=======
+  gem 'pg', '0.18.4'
+>>>>>>> f494f4e9835580c47d9e4d0157e96295c0c1aafb
   gem 'unicorn'
 end
 
