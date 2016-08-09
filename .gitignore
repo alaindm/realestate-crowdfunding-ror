@@ -17,3 +17,8 @@ config/database.yml
 /log/*
 !/log/.keep
 /tmp
+# ignore do files
+do
+do.pub
+# ignore public files 
+/public/assets
