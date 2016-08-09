@@ -1,20 +1,16 @@
-<% provide(:title, 'Reset password') %>
-<h1>Reset password</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(@user, url: password_reset_path(params[:id])) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-
-      <%= hidden_field_tag :email, @user.email %>
-
-      <%= f.label :password %>
-      <%= f.password_field :password, class: 'form-control' %>
-
-      <%= f.label :password_confirmation, "Confirmation" %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
-
-      <%= f.submit "Update password", class: "btn btn-primary" %>
+<% provide(:title, 'Configurar nova senha') %>
+<div class="ui grid stackable">
+  <div class="ui eight wide column">
+    <div class="ui header">Cadastrar nova senha</div>
+    <div class="ui divider"></div>
+    <%= form_for(@user, url: password_reset_path(params[:id]), html: { class: "ui form" }) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+    <%= hidden_field_tag :email, @user.email %>
+    <%= f.label :password, "Nova Senha:" %>
+    <%= f.password_field :password, class: 'form-control' %>
+    <%= f.label :password_confirmation, "Confirme a nova senha:" %>
+    <%= f.password_field :password_confirmation, class: 'form-control' %>
+    <%= f.submit "Atualizar Senha", class: "ui blue button" %>
     <% end %>
   </div>
 </div>

@@ -21,8 +21,8 @@ pt-BR:
         description: 'Descrição do Projeto'
       investment:
         request_amount: 'Valor do Investimento'
-      project:
-
+      password_reset:
+        email: 'E-mail'
   date:
     abbr_day_names:
     - Dom

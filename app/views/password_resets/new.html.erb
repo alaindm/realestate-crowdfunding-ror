@@ -1,13 +1,20 @@
-<% provide(:title, "Forgot password") %>
-<h1>Forgot password</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for(:password_reset, url: password_resets_path) do |f| %>
-      <%= f.label :email %>
-      <%= f.email_field :email, class: 'form-control' %>
-
-      <%= f.submit "Submit", class: "btn btn-primary" %>
+<% provide(:title, "Reiniciar Senha") %>
+<div class="ui grid stackable">
+  <div class="ui eight wide column">
+  <div class="ui header">Esqueceu a senha?</div><br>
+    <div class="ui small header">Digite seu e-mail abaixo:</div>
+    <div class="ui divider"></div><br>
+    <%= form_for(:password_reset, url: password_resets_path, html: { class: "ui form" }) do |f| %>
+    <div class="field">
+        <%= f.label :email, "E-mail" %>
+        <%= f.email_field :email, class: 'form-control' %>
+    </div>
+    <br>
+    <%= f.submit "Enviar", class: "ui blue button" %>
     <% end %>
-  </div>
+    <br>
+    <div class="ui divider"></div><br>
+    <p>Nós enviaremos uma mensagem para o seu e-mail cadastrado com as instruções para recuperar sua senha.</p>
+    </div>
+</div>
 </div>
