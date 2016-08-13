@@ -11,7 +11,7 @@ gem 'turbolinks',   '5.0.0'
 gem 'jbuilder',     '2.4.1'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'carrierwave',  '0.11.2'
-
+gem 'figaro', '~> 1.1', '>= 1.1.1'
 
 
 group :development, :test do
@@ -35,7 +35,7 @@ group :test do
 end
 
 group :production do
-  gem 'pg'  
+  gem 'pg'
   gem 'unicorn'
 end
 

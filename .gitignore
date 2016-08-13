@@ -22,3 +22,6 @@ do
 do.pub
 # ignore public files 
 /public/assets
+
+# Ignore application configuration
+/config/application.yml
