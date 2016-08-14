@@ -1,16 +1,18 @@
+
 {
-    "master_picture": "app/assets/images/favicon.svg",
+    "master_picture": "app/assets/images/logof.svg",
     "favicon_design": {
         "ios": {
             "picture_aspect": "background_and_margin",
             "background_color": "#ffffff",
-            "margin": "11%",
+            "margin": "14%",
             "assets": {
                 "ios6_and_prior_icons": false,
                 "ios7_and_later_icons": false,
                 "precomposed_icons": false,
                 "declare_only_default_icon": true
-            }
+            },
+            "app_name": "Imobank"
         },
         "desktop_browser": [
 
@@ -27,11 +29,12 @@
                     "big": false,
                     "rectangle": false
                 }
-            }
+            },
+            "app_name": "Imobank"
         },
         "android_chrome": {
             "picture_aspect": "background_and_margin",
-            "margin": "13%",
+            "margin": "17%",
             "background_color": "#ffffff",
             "theme_color": "#ffffff",
             "manifest": {
@@ -52,6 +55,7 @@
         }
     },
     "settings": {
+        "compression": 1,
         "scaling_algorithm": "Mitchell",
         "error_on_image_too_small": false
     }
