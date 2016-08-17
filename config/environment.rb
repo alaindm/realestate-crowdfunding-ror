@@ -5,7 +5,6 @@ require File.expand_path('../application', __FILE__)
 Rails.application.initialize!
 
 # Configure ActionMailer to Use SendGrid
-config.action_maile‌​r.raise_delivery_erro‌​rs = true
 # source: https://sendgrid.com/docs/Integrate/Frameworks/rubyonrails.html
 ActionMailer::Base.smtp_settings = {
   :user_name => ENV["SENDGRID_USERNAME"],
