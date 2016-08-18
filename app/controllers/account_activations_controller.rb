@@ -6,10 +6,10 @@ class AccountActivationsController < ApplicationController
       user.activate
       user.update_attribute(:activated_at, Time.zone.now)
       log_in user
-      flash[:green] = "Account activated!"
-      redirect_to user
+      flash[:green] = "Conta Ativada! Este é o seu Painel de Controle de Investimentos."
+      redirect_to painel_de_controle
     else
-      flash[:red] = "Invalid activation link"
+      flash[:red] = "Link de ativação de conta inválido"
       redirect_to root_url
     end
   end
