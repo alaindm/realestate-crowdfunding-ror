@@ -1,4 +1,8 @@
 <% provide(:title, 'Reserva de Investimento') %>
+<% provide(:meta_desc, "Reserva de investimento crowdfunding na plataforma Imobank para Projeto") %>
+<% provide(:meta_keywords, "crowdfunding, imobiliário, investimento, cadastro, pedido, reserva, investidor, construção, projeto,") %>
+<% provide(:robots, "NOINDEX, NOFOLLOW") %>
+
 <h1>Reserva de Investidor</h1>
 
 <% if logged_in? %>
@@ -7,12 +11,12 @@
 
     <%= form_for(@investment) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
-      
+
         <%= f.hidden_field :project_id, :project_id => params[:project_id] %>
         <%= f.label :request_amount, "Valor do Investimento" %>
         <%= f.text_field :request_amount, class: 'form-control' %>
-        
-        
+
+
         <%= f.submit "Confirmar reserva de investimento", class: "ui green inverted button" %>
     <% end %>
 <% end %>

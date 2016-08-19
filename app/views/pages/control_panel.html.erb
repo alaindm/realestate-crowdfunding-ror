@@ -1,4 +1,8 @@
 <% provide(:title, 'Painel de Controle' ) %>
+<% provide(:meta_desc, "Painel de Controle do investidor") %>
+<% provide(:meta_keywords, "controle, resumo, meus, investimentos, lista,") %>
+<% provide(:robots, "NOINDEX, NOFOLLOW") %>
+
 <div class="ui container">
     <div class="ui grid stackable">
         <div class="ui eight wide column">
@@ -9,7 +13,7 @@
                 <div class="description"><strong>Mais dados:</strong><%= @user.email %></div><br>
                 <div class="ui tiny blue button">Atualizar Dados</div>
             </div>
-        </div> 
+        </div>
         <div class="ui eight wide column">
             <div class="ui basic segment">
                 <div class="ui small center aligned header">Resumo</div><br>
@@ -27,7 +31,7 @@
                         <div class="label"><%= "Investido".pluralize(@user.investments.sum(:deposit_amount)) %></div>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
     </div>
 
@@ -40,13 +44,13 @@
             <th>Nome</th>
             <th>Tipo</th>
             <th>Taxa</th>
-            <th>Local</th>  
+            <th>Local</th>
         </tr>
               <%= render @project_list %>
         </table>
     <% else %>
         <div class="ui compact floating message"><p>Nenhum investimento realizado.</p></div>
-    <% end %>   
+    <% end %>
 
 
 
@@ -58,13 +62,13 @@
             <th>Data</th>
             <th>Projeto</th>
             <th>Valor da Reserva</th>
-            <th>Status</th>        
+            <th>Status</th>
             <th>Valor Investido</th>
         </tr>
               <%= render @investment_list %>
         </table>
     <% else %>
         <div class="ui compact floating message"><p>Não existem investimentos ou reservas realizadas até o momento.</p></div>
-    <% end %>    
+    <% end %>
 </div>
 </div>
