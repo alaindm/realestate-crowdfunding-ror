@@ -1,0 +1,10 @@
+<% provide(:title, @article.title ) %>
+<% provide(:meta_desc, @article.metadesc) %>
+<% provide(:meta_keywords, @article.metakeywords ) %>
+<% provide(:robots, "INDEX, FOLLOW") %>
+
+<%= @article.title %>
+
+<%= @article.part1 %>
+
+<%= image_tag (@image_src) %>

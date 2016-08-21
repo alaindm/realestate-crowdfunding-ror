@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160803222159) do
+ActiveRecord::Schema.define(version: 20160819220714) do
+
+  create_table "articles", force: :cascade do |t|
+    t.string   "title"
+    t.text     "part1"
+    t.text     "part2"
+    t.text     "part3"
+    t.string   "img1"
+    t.string   "img2"
+    t.string   "img3"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.string   "metadesc"
+    t.string   "metakeywords"
+  end
 
   create_table "candidates", force: :cascade do |t|
     t.string   "name"
