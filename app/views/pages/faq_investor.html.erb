@@ -102,3 +102,17 @@ $(document)
     <br>
     <p><strong>Precisa de mais detalhes?</strong> Entre em contato por e-mail: <%= mail_to "contato@imobank.com.br", class: "item" do %> contato@imobank.com.br <% end %></p>
 </div>
+
+
+<h4 class="ui centered header grey", id="veja_tambem">Veja também:</h4>
+<div class="ui equal width grid stackable">
+    <div class="ui center aligned column">
+        <%= link_to "Perguntas Frequentes dos Investidores", perguntas_frequentes_do_investidor_path, :class=>"ui blue button fluid" %>
+    </div>
+    <div class="ui center aligned column">
+        <%= link_to "Projetos Disponíveis", projects_path, :class=>"ui black button fluid" %>
+    </div>
+    <div class="ui center aligned column">
+        <%= link_to "Modelo Jurídico-Financeiro", modelo_de_negocio_path, :class=>"ui green button fluid" %>
+    </div>
+</div>

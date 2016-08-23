@@ -2,17 +2,65 @@
 <% provide(:meta_desc, "Como funciona o negócio para Investidores") %>
 <% provide(:meta_keywords, "funcionamento, modelo, dúvidas, crowdfunding, imobiliário, investimento, brasil, brasileiro,") %>
 <% provide(:robots, "INDEX, FOLLOW") %>
-
 <div class="ui main container stackable">
-    <h2 class="ui center aligned block header">Como funciona o IMOBANK para Investidores</h2>
-    <h4 class="ui teal center aligned header">Segurança e transparência em todo o processo</h2>
+    <h2 class="ui center aligned header", id="pages_header">Como funciona o IMOBANK para Investidores</h2>
+<%= image_tag "crowdfunding-startup-financing.jpg", class: "ui medium centered image" %>
+    <h4 class="ui centered header">Processo de Investimento</h4>
+
+
+        <div class="ui five stackable steps">
+            <div class="step">
+                <i class="at icon"></i>
+                <div class="content">
+                    <div class="title">Abra sua Conta</div>
+                    <div class="description">Em 5 minutos</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <i class="search icon"></i>
+                <div class="content">
+                    <div class="title">Analise os projetos disponíveis</div>
+                    <div class="description">Projeção financeira, empreendimento, localização, etc.</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <i class="in cart icon"></i>
+                <div class="content">
+                    <div class="title">Escolha e Invista</div>
+                    <div class="description">Faça a reserva e a transferência</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <i class="table icon"></i>
+                <div class="content">
+                    <div class="title">Acompanhe a evolução</div>
+                    <div class="description">Através do painel de controle da sua conta no IMOBANK</div>
+                </div>
+            </div>
+
+            <div class="step">
+                <i class="dollar icon"></i>
+                <div class="content">
+                    <div class="title">Receba o retorno do investimento</div>
+                    <div class="description">Na sua conta corrente</div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+
 
     <div class="ui basic segment">
         <h3 class="ui left aligned header">1. Cadastro online simplificado</h3>
         <div class="content">O cadastro é sem compromisso de investimento e habilita o usuário a ver todos os detalhes dos projetos.</div>
+        <%= image_tag "user-group.svg", class: "ui medium right floated image" %>
     </div>
 
-    <div class="ui divider"></div>
+
 
     <div class="ui basic segment">
         <h3 class="ui left aligned header">2. Analise e escolha entre os projeto disponíveis</h3>
@@ -20,34 +68,50 @@
         <div class="content">O investidor pode ver todos os documentos, informações e análises online.</div>
     </div>
 
-    <div class="ui divider"></div>
+
 
     <div class="ui basic segment">
         <h3 class="ui left aligned header">3. Investimento</h3>
+        <%= image_tag "money-flowing.jpg", class: "ui medium right floated image" %>
         <div class="content">Após a reserva, o investidor deverá enviar alguns documentos digitalizados e transferir os recursos para a conta indicada em até 2 dias úteis.</div>
         <div class="content">Acompanhe a validação dos seus investimentos através do menu "Minha Conta/Meus Investimentos" do Imobank.</div>
     </div>
 
-    <div class="ui divider"></div>
+
 
     <div class="ui basic segment">
         <h3 class="ui left aligned header">4. Receba o título de investimento</h3>
         <div class="content">O investidor terá acesso aos seu título em formato PDF assinado digitalmente pelo emissor.</div>
         <div class="content">Caso a captação não atinja o objetivo. O Investidor receberá o valor na conta indicada no seu cadastro.</div>
+        <%= image_tag "house_over_money.jpg", class: "ui medium right floated image" %>
     </div>
 
-    <div class="ui divider"></div>
+
 
     <div class="ui basic segment">
         <h3 class="ui left aligned header">5. Acompanhe a evolução do projeto e receba os pagamentos</h3>
+
         <div class="content">Pelo website do Imobank, o investidor recebe relatórios periódiocos do andamento do projeto e acompanha o retorno do investimento.</div>
     </div>
 
-    <div class="ui divider"></div>
+
 
     <div class="ui basic segment">
         <h3 class="ui left aligned header">6. Conclusão do Projeto</h3>
         <div class="content">Após o fim do projeto e dos pagamentos, o título é extinto.</div>
     </div>
 
+</div>
+
+<h4 class="ui centered header grey", id="veja_tambem">Veja também:</h4>
+<div class="ui equal width grid stackable">
+    <div class="ui center aligned column">
+        <%= link_to "Perguntas Frequentes dos Investidores", perguntas_frequentes_do_investidor_path, :class=>"ui blue button fluid" %>
+    </div>
+    <div class="ui center aligned column">
+        <%= link_to "Projetos Disponíveis", projects_path, :class=>"ui black button fluid" %>
+    </div>
+    <div class="ui center aligned column">
+        <%= link_to "Modelo Jurídico-Financeiro", modelo_de_negocio_path, :class=>"ui green button fluid" %>
+    </div>
 </div>
