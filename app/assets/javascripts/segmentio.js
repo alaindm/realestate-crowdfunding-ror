@@ -1,4 +1,3 @@
-<script type="text/javascript">
   (function(){
 
     // Create a queue, but don't obliterate an existing one!
@@ -98,5 +97,3 @@ analytics.page();
 // analytics.trackForm($('#new_contact'), 'Contact Request');
 })
 
-
-</script>
