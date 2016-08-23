@@ -43,9 +43,10 @@
 <div class="ui header centered large grey", id="home_second_block">Plataforma de Investimento Imobiliário Crowdfunding</div>
 <div class="ui header small centered", id="home_third_block">Conectamos Investidores aos Desenvolvedores Imobiliários</div>
 <br>
-<div class="ui grid stackable", id="env_block">
+<div class="ui internally celled grid stackable", id="env_block">
+
     <div class="ui six wide column">
-     <div class="ui raised segment">
+     <div class="ui basic segment">
         <div class="ui header centered large", id="env_headers">Investidores</div>
         <%= image_tag "crowdfunders.jpg",  class: "ui fluid image"%>
         <div class="ui list">
@@ -89,6 +90,9 @@
         <%= image_tag "logosmall.svg", class: "ui small centered image" %>
         <br><br>
         <div class="ui list">
+        <div class="item">
+            <i class="checkmark icon"></i><div class="content">Avaliação dos Desenvolvedores</div>
+        </div>
           <div class="item">
             <i class="checkmark icon"></i><div class="content">Pré-seleção dos projetos</div>
         </div>
@@ -105,11 +109,12 @@
 </div>
 </div>
 <div class="ui six wide column">
- <div class="ui raised segment">
+ <div class="ui basic segment">
     <div class="ui header centered large", id="env_headers">Desenvolvedores</div>
     <%= image_tag "desenvolvimento.jpg",  class: "ui fluid image"%>
     <div class="ui list">
       <div class="item">
+      <br>
         <i class="checkmark icon"></i><div class="content">Precisam de capital para viabilizar o empreendimento</div>
     </div>
     <div class="item">
@@ -117,6 +122,9 @@
     </div>
     <div class="item">
         <i class="checkmark icon"></i><div class="content">Acesso a uma comunidade que poderá ser parceira por muitas vezes.</div>
+        <br>
+
+
     </div>
 </div>
 <%= link_to "Inscreva seu Projeto", candidates_new_path, :class=>"ui black button fluid monitor only" %>
@@ -124,6 +132,7 @@
 </div>
 </div>
 </div>
+
 <%= render 'shared/projects_available' %>
 <div class="ui container">
     <br>

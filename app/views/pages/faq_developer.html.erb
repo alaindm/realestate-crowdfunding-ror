@@ -3,99 +3,53 @@
 <% provide(:meta_keywords, "FAQ, Perguntas, dúvidas, frequentes, crowdfunding, imobiliário, investimento, brasil, brasileiro,") %>
 <% provide(:robots, "INDEX, FOLLOW") %>
 <script>
-$(document)
+    $(document)
     .ready(function() {
         $('.ui.accordion')
-            .accordion();
+        .accordion();
         $('.ui.secondary.pointing.menu .item').tab();
-            });
+    });
 </script>
 
 
 <div class="ui container">
-    <h1>Empreendedores</h1>
-    <h2 class="header"><i class="info circle icon"></i>Perguntas Frequentes</h2>
+    <h1 class="header"><i class="info circle icon"></i>Empreendedores - Perguntas Frequentes</h1>
     <div class="ui divider">
     </div>
+    <div class="ui pointing secondary menu">
+        <a class="item active" data-tab="1">Sobre o serviço</a>
+        <a class="item" data-tab="2">Captação</a>
+        <a class="item" data-tab="3">Jurídico-Financeiro</a>
+    </div>
 
-        <div class="ui pointing secondary menu">
-            <a class="item active" data-tab="1">Sobre o serviço</a>
-            <a class="item" data-tab="2">Captação</a>
-            <a class="item" data-tab="3">Jurídico-Financeiro</a>
+    <div class="ui tab active" data-tab="1">
+        <div class="ui styled accordion fluid">
+            <div class="title"><i class="dropdown icon"></i>O que é o Imobank e como funciona?</div>
+            <div class="content"><p>Somos uma plataforma de investimento coletivo (crowdfunding) especializada em construção civil. Nosso objetivo é oferecer a toda comunidade de investidores a oportunidade de investir em projetos imobiliários pré-selecionados. </p><p>Estes tipos de projetos demandam alto valor total investido e acabam sendo realizado normalmente por grandes investidores, porém através do crowdfunding é possível que pequenos investidores tenham acesso às oportunidades e os empreendedores recebem o investimento da mesma forma.</p></div>
+            <div class="title"><i class="dropdown icon"></i> Existem taxas pelo serviço do Imobank?</div>
+            <div class="content"><p>Resposta 1</p><p>O empreendedor deve pagar um percentual sobre o valor captado ao Imobank pelo serviço de organização da captação, análise e tecnologia da plataforma.</p></div>
+            <div class="title"><i class="dropdown icon"></i> Quais tipos de empreendedores podem usar o serviço do Imobank?</div>
+            <div class="content"><p>Resposta 1</p><p>Empreendedores de pequeno porte conforme a lei. Isto significa que a empresa deve ser organizada na forma de sociedade limitada e com receita anual de até R$ 3.600.000,00.</p></div>
         </div>
+    </div>
 
-        <div class="ui tab active" data-tab="1">
-            <div class="ui styled accordion fluid">
-                <div class="active title">
-                    <i class="dropdown icon"></i> O que é o Imobank e como funciona?
-                </div>
-                <div class="active content">
-                    <p>Paragrafo de Resposta.</p>
-                </div>
-                <div class="title">
-                    <i class="dropdown icon"></i> Como começo a investir pelo Imobank?
-                </div>
-                <div class="content">
-                    <p>Paragrafo de Resposta.</p>
-                    </div>
-                <div class="title">
-                    <i class="dropdown icon"></i> Quem é o Imobank?
-                </div>
-                <div class="content">
-                    <p>Resposta 1</p>
-                    <p>Outro paragrafo de resposta </p>
-                </div>
-            </div>
+    <div class="ui tab" data-tab="2">
+        <div class="ui styled accordion fluid">
+            <div class="title"><i class="dropdown icon"></i> Quanto posso levantar de capital na plataforma?</div>
+            <div class="content"><p>O limite estabelecido pela instrução CVM nº 400/03 é de R$ 2.400.000,00 a cada perído de 12 meses.</p></div>
+            <div class="title"><i class="dropdown icon"></i> Quanto tempo demora para receber o investimento?</div>
+            <div class="content"><p>A captação pode durar até 6 meses. Este prazo é estabelecido entre o Imobank e empreendedor de acordo com a situação de mercado no momento. Após o término da captação, o valor é disponibilizado ao empreendedor em até uma semana.</p></div>
         </div>
+    </div>
 
-        <div class="ui tab" data-tab="2">
-            <div class="ui styled accordion fluid">
-                <div class="title">
-                    <i class="dropdown icon"></i> Como captar?
-                </div>
-                <div class="content">
-                    <p>lorem jjkfksl jklfjkladjklf j jkfadfjksajk fjff j jfklsdkl</p>
-                </div>
-                <div class="title">
-                    <i class="dropdown icon"></i> What kinds of Investiemnt?
-                </div>
-                <div class="content">
-                    <p>gfdg fdsg s gsdfg fdg sdfgs gfsdg sdfgsdfgdfgsfdg</p>
-                </div>
-                <div class="title">
-                    <i class="dropdown icon"></i> How do you acquire a dog?
-                </div>
-                <div class="content">
-                    <p>bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla bla lba lbblbla </p>
-                    <p>ggfd g gdfgg dfgsdgsfgdf gfgsdfg fgsdfg.</p>
-                </div>
-            </div>
+    <div class="ui tab" data-tab="3">
+        <div class="ui styled accordion fluid">
+            <div class="title"><i class="dropdown icon"></i> O Imobank exige algum tipo de controle da operação?</div>
+            <div class="content"><p>Não. O Imobank exige a autenticidade de diversos documentos e projetos elaborados de acordo com a lei. Entre as cláusulas do contrato do empreendedor com a plataforma e com os investidores, está a de que o empreendedor deverá enviar relatórios financeiros e de andamento do projeto periodicamente. O controle da gestão e operação é totalmente do empreendedor.</p></div>
+            <div class="title"><i class="dropdown icon"></i> Quais documentos devo enviar para inscrever meu projeto?</div>
+            <div class="content"><p>O Imobank enviará a lista dos documentos necessários de acordo com o tipo do seu projeto. Entre estes estão detalhes do projeto e certidões do imóvel e do empreendedor.</p></div>
         </div>
-
-
-        <div class="ui tab active" data-tab="3">
-            <div class="ui styled accordion fluid">
-                <div class="title">
-                    <i class="dropdown icon"></i> O que é o Imobank e como funciona?
-                </div>
-                <div class="content">
-                    <p>Paragrafo de Resposta.</p>
-                </div>
-                <div class="title">
-                    <i class="dropdown icon"></i> Como começo a investir pelo Imobank?
-                </div>
-                <div class="content">
-                    <p>Paragrafo de Resposta.</p>
-                    </div>
-                <div class="title">
-                    <i class="dropdown icon"></i> Quem é o Imobank?
-                </div>
-                <div class="content">
-                    <p>Resposta 1</p>
-                    <p>Outro paragrafo de resposta </p>
-                </div>
-            </div>
-        </div>
+    </div>
 
 
 
@@ -108,7 +62,7 @@ $(document)
 <h4 class="ui centered header grey", id="veja_tambem">Veja também:</h4>
 <div class="ui equal width grid stackable">
     <div class="ui center aligned column">
-        <%= link_to "Perguntas Frequentes dos Desenvolvedores", perguntas_frequentes_do_construtor_path, :class=>"ui blue button fluid" %>
+        <%= link_to "Perguntas Frequentes dos Investidores", perguntas_frequentes_do_investidor_path, :class=>"ui blue button fluid" %>
     </div>
     <div class="ui center aligned column">
         <%= link_to "Inscreva seu Projeto", candidates_new_path, :class=>"ui black button fluid" %>
