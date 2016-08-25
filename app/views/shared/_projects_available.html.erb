@@ -1,14 +1,26 @@
-<style>
-    #detalhes-button {
-        display: block;
-    }
-</style>
+<% if @projects.empty? %>
+<div id="projects_empty">
+<div class="ui huge center aligned header", id="project_empty_title">Não existem projetos em captação no momento.</div>
+</div>
+<div class="ui equal width grid stackable">
+    <div class="ui center aligned column">
+    <br>
+    <br>
+    <div class="ui container">
+    <div class="ui raised segment">
+    <h4 class="ui black header">Cadastre-se para ser notificado de uma nova oportunidade de investimento</h4>
+<%= link_to "Cadastre-se", cadastrar_path, :class=>"ui green button" %>
+</div>
+</div>
+</div>
+</div>
+<% end %>
 
 <% @projects.each do |project| %>
 
 <div class="ui main container">
         <div class="ui horizontal divider header">Projetos em captação</div><br>
-        
+
         <div class="ui raised centered cards">
             <div class="card">
                 <div class="image">
@@ -40,9 +52,9 @@
                     <%= link_to "Ver Detalhes", project_path(project.id), :class=>"ui blue button", :id=>"detalhes-button" %>
                 </div>
             </div>
-            
+
         </div>
-        
+
     </div>
 
 <% end %>

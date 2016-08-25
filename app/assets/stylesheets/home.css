@@ -1,10 +1,33 @@
+#msg_container {
+  margin-top: 5rem;
+}
+
+#home_main {
+  background-image: url('home-first.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  margin-bottom: 0rem;
+  margin-top: 0rem;
+}
+#home_main_title {
+  margin-bottom: 6rem;
+  margin-top: 6rem;
+}
+#home_three {
+margin-bottom: 6rem;
+}
+#home_two {
+  padding-bottom: 50px;
+}
 #home_first_block {
   margin-bottom: 4rem;
   margin-top: 8rem;
+
 }
 #home_second_block {
   margin-bottom: 1rem;
-  margin-top: 4rem;
+  margin-top: 6rem;
 }
 #home_third_block {
   margin-bottom: 4rem;

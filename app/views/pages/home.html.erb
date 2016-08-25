@@ -1,52 +1,74 @@
 <% provide(:meta_desc, "Imobank é uma plataforma de investimento imobiliário crowdfunding em construção civil, incorporações, reformas, leilões.") %>
 <% provide(:meta_keywords, "crowdfunding, imobiliário, investimento, brasil, brasileiro, construção, reforma, incorporação,") %>
 <% provide(:robots, "INDEX, FOLLOW") %>
-<div class="ui main grid container stackable", id="home_first_block">
-    <div class="ui eight wide centered column">
-        <p>IMOBANK - CROWDFUNDING IMOBILIÁRIO</p>
-        <h1>Investimentos em Construção Civil</h1><br>
-        <div class="ui list">
-          <div class="item">
-            <div class="content">
-              <div class="ui blue small header">Invista online</div>
-              <p>A partir de R$ 1.000,00</p>
+
+<div id="home_main">
+<div class="ui container">
+    <div class="ui three column grid stackable", id="home_three">
+        <div class="one column row">
+            <div class="column">
+                <div class="ui huge center aligned header", id="home_main_title">Invista em Construção Civil a partir de R$ 5.000</div>
+            </div>
+        </div>
+        <div class="column center aligned">
+            <i class="huge line chart icon"></i>
+            <div class="ui list">
+              <div class="item">
+                <div class="content">
+                  <div class="ui blue small header">
+                      RENTABILIDADE
+                  </div>
+                  <p>do desenvolvimento imobiliário</p>
+              </div>
           </div>
       </div>
+  </div>
+  <div class="column center aligned">
+    <i class="huge filter icon"></i>
+    <div class="ui list">
       <div class="item">
         <div class="content">
-          <div class="ui blue small header">Ofertas pré-selecionadas pela plataforma</div>
-          <p>Veja os detalhes dos projetos e documentos antes de investir</p>
+          <div class="ui blue small header">PROJETOS SELECIONADOS</div>
+          <p>análise financeira, jurídica e mercadológica</p>
       </div>
   </div>
-  <div class="item">
-    <div class="content">
-      <div class="ui blue small header">Crowdfunding realizado de acordo com a Instrução CVM 400/2003</div>
-      <p>Investidores recebem o contrato de investimento coletivo assinado digitalmente</p>
+</div>
+</div>
+<div class="column center aligned">
+    <i class="huge laptop icon"></i>
+    <div class="ui list">
+      <div class="item">
+        <div class="content">
+          <div class="ui blue small header">RELATÓRIOS TRIMESTRAIS</div>
+          <p>disponibilizados na plataforma Imobank</p>
+      </div>
   </div>
 </div>
 </div>
 </div>
-<div class="ui four wide column center aligned">
-    <%= image_tag "mapa.png",  height: "160" %>
-    <p><strong>Investidores:</strong><br>Acesso a empreendimentos em todo território nacional</p>
-    <%= link_to "Ver Projetos Disponíveis", projects_path, :class=>"ui green button fluid monitor only" %>
-    <%= link_to "Ver Projetos Disponíveis", projects_path, :class=>"ui green button mobile only" %>
+
+<div class="ui grid stackable two column", id="home_two">
+    <div class="column center aligned">
+        <div class="ui small header">Investidores</div>
+        <%= link_to "Ver Projetos Disponíveis", projects_path, :class=>"ui green button" %>
+    </div>
+    <div class="column center aligned">
+        <div class="ui small header">Construtores</div>
+        <%= link_to "Receba Investimento", como_funciona_para_o_construtor_path, :class=>"ui blue button" %>
+    </div>
 </div>
-<div class="ui four wide column center aligned">
-    <%= image_tag "mortgage.jpg",  height: "160" %>
-    <p><strong>Desenvolvedores Imobiliários: </strong><br>Receba o investimento necessário para seu projeto</p>
-    <%= link_to "Conheça o modelo", como_funciona_para_o_construtor_path, :class=>"ui blue button fluid monitor only" %>
-    <%= link_to "Conheça o modelo", como_funciona_para_o_construtor_path, :class=>"ui blue button mobile only" %>
+
 </div>
 </div>
-<div class="ui divider"></div>
+
+<div class="ui container">
 <div class="ui header centered large grey", id="home_second_block">Plataforma de Investimento Imobiliário Crowdfunding</div>
 <div class="ui header small centered", id="home_third_block">Conectamos Investidores aos Desenvolvedores Imobiliários</div>
 <br>
 <div class="ui internally celled grid stackable", id="env_block">
 
     <div class="ui six wide column">
-     <div class="ui basic segment">
+       <div class="ui basic segment">
         <div class="ui header centered large", id="env_headers">Investidores</div>
         <%= image_tag "crowdfunders.jpg",  class: "ui fluid image"%>
         <div class="ui list">
@@ -90,34 +112,34 @@
         <%= image_tag "logosmall.svg", class: "ui small centered image" %>
         <br><br>
         <div class="ui list">
-        <div class="item">
-            <i class="checkmark icon"></i><div class="content">Avaliação dos Desenvolvedores</div>
-        </div>
-          <div class="item">
-            <i class="checkmark icon"></i><div class="content">Pré-seleção dos projetos</div>
-        </div>
-        <div class="item">
-            <i class="checkmark icon"></i><div class="content">Captação Crowdfunding</div>
-        </div>
-        <div class="item">
-            <i class="checkmark icon"></i><div class="content">Emissão dos Títulos</div>
-        </div>
-        <div class="item">
-            <i class="checkmark icon"></i><div class="content">Relatórios de acompanhamento do projeto e do retorno do investimento</div>
+            <div class="item">
+                <i class="checkmark icon"></i><div class="content">Avaliação dos Desenvolvedores</div>
+            </div>
+            <div class="item">
+                <i class="checkmark icon"></i><div class="content">Pré-seleção dos projetos</div>
+            </div>
+            <div class="item">
+                <i class="checkmark icon"></i><div class="content">Captação Crowdfunding</div>
+            </div>
+            <div class="item">
+                <i class="checkmark icon"></i><div class="content">Emissão dos Títulos</div>
+            </div>
+            <div class="item">
+                <i class="checkmark icon"></i><div class="content">Relatórios de acompanhamento do projeto e do retorno do investimento</div>
+            </div>
         </div>
     </div>
 </div>
-</div>
 <div class="ui six wide column">
- <div class="ui basic segment">
+   <div class="ui basic segment">
     <div class="ui header centered large", id="env_headers">Desenvolvedores</div>
     <%= image_tag "desenvolvimento.jpg",  class: "ui fluid image"%>
     <div class="ui list">
       <div class="item">
-      <br>
-        <i class="checkmark icon"></i><div class="content">Precisam de capital para viabilizar o empreendimento</div>
-    </div>
-    <div class="item">
+          <br>
+          <i class="checkmark icon"></i><div class="content">Precisam de capital para viabilizar o empreendimento</div>
+      </div>
+      <div class="item">
         <i class="checkmark icon"></i><div class="content">Continuam com autonomia na gestão</div>
     </div>
     <div class="item">
@@ -134,34 +156,7 @@
 </div>
 
 <%= render 'shared/projects_available' %>
-<div class="ui container">
-    <br>
-    <div class="ui divider"></div>
-    <h2 class="ui centered header", id="vantagens_header">Vantagens de investir via Imobank</h2>
-</br>
-<div class="ui equal width grid stackable", id="vantagens_steps">
-    <div class="ui column center aligned">
-        <i class="laptop icon huge"></i>
-        <h4 class="ui header">Investimento totalmente online</h4>
-    </div>
-    <div class="ui column center aligned">
-        <i class="checkmark icon huge"></i>
-        <h4 class="ui header">Análise financeira, jurídica e de viabilidade mercadológica feita por profissionais</h4>
-    </div>
-    <div class="ui column center aligned">
-        <i class="pie chart icon huge"></i>
-        <h4 class="ui header">Diversificação de seus investimentos em Real Estate</h4>
-    </div>
-    <div class="ui column center aligned">
-        <i class="money icon huge"></i>
-        <h4 class="ui header">Modelo jurídico financeiro regulado pela CVM (Comissão de Valores Mobiliários)</h4>
-    </div>
-    <div class="ui column center aligned">
-        <i class="line chart icon huge"></i>
-        <h4 class="ui header">Relatórios periódicos da evolução do seu projeto</h4>
-    </div>
-</div>
-</div>
+
 <h4 class="ui centered header grey">Veja também:</h4>
 <div class="ui equal width grid stackable">
     <div class="ui center aligned column">
@@ -176,4 +171,5 @@
         <%= link_to "Projetos Disponíveis", projects_path, :class=>"ui green button fluid monitor only" %>
         <%= link_to "Projetos Disponíveis", projects_path, :class=>"ui green button mobile only" %>
     </div>
+</div>
 </div>

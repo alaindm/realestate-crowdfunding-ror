@@ -2,70 +2,17 @@
 <% provide(:meta_desc, "Como funciona o negócio para Empreendedores, Desenvolvedores e Construtores") %>
 <% provide(:meta_keywords, "funcionamento, modelo, dúvidas, crowdfunding, imobiliário, investimento, brasil, brasileiro,") %>
 <% provide(:robots, "INDEX, FOLLOW") %>
-
+<div class="ui main container">
 <div class="ui container">
-    <h2 class="ui center aligned header", id="pages_header">Como funciona o IMOBANK para Empreendedores</h2>
+    <h2 class="ui center aligned header", id="pages_header">Precisa de investimento para desenvolver o seu projeto imobiliário?</h2>
 
 <%= image_tag "skyline.jpg", class: "ui large centered image" %>
-<h4 class="ui blue center aligned header">PASSO-A-PASSO</h2>
-
-        <div class="ui five stackable steps">
-            <div class="step">
-                <i class="map outline icon"></i>
-                <div class="content">
-                    <div class="title">Apresente seu projeto</div>
-                    <div class="description">Inscreva-o na plataforma e explique ao nosso gerente de negócios</div>
-                </div>
-            </div>
-
-            <div class="step">
-                <i class="law icon"></i>
-                <div class="content">
-                    <div class="title">Aguarde o Imobank regularizar a captação</div>
-                    <div class="description">Em menos de uma semana</div>
-                </div>
-            </div>
-
-            <div class="step">
-                <i class="users icon"></i>
-                <div class="content">
-                    <div class="title">Acompanhe o crowdfunding pela plataforma</div>
-                    <div class="description">E receba o capital ao final da captação pra iniciar o projeto</div>
-                </div>
-            </div>
-
-            <div class="step">
-                <i class="line chart icon"></i>
-                <div class="content">
-                    <div class="title">Envie periodicamente os relatórios de andamento</div>
-                    <div class="description">Para os investidores acompanharem a evolução</div>
-                </div>
-            </div>
-
-            <div class="step">
-                <i class="flag checkered icon"></i>
-                <div class="content">
-                    <div class="title">Realize a distribuição dos lucros conforme o contrato</div>
-                    <div class="description">Na conclusão do projeto</div>
-                </div>
-            </div>
-
-        </div>
-        <br>
-
-
-
-
-
-
-
-
 
 
 
     <div class="ui basic segment">
         <h3 class="ui left aligned header">1. Apresente o projeto ao Imobank</h3>
-        <%= image_tag "project-presentation.jpg", class: "ui medium right floated image" %>
+        <%= image_tag "project-presentation.jpg", class: "ui medium right floated image monitor only" %>
         <div class="content">Inscreve rapidamente seu projeto pela plataforma para que nossa equipe se prepare para oferecer a melhor solução para a sua captação.</div>
     </div>
 
@@ -78,7 +25,6 @@
     </div>
 
 
-<%= image_tag "crowdfunding-photo.jpg", class: "ui medium left floated image" %>
     <div class="ui basic segment">
         <h3 class="ui left aligned header">3. Prepare-se para preencher e fornecer a documentação para oficializar sua captação pela plataforma.</h3>
         <div class="content">Nesta fase ocorre a regularização de garantias oferecidas e a documentação necessária para o registro da oferta ao público.</div>
@@ -92,7 +38,7 @@
     </div>
 
 
-<%= image_tag "house-construction.png", class: "ui medium right floated image" %>
+<%= image_tag "house-construction.png", class: "ui medium right floated image monitor only" %>
     <div class="ui basic segment">
 
         <h3 class="ui left aligned header">5. Término da captação pelo Imobank.</h3>
@@ -120,4 +66,5 @@
     <div class="ui center aligned column">
         <%= link_to "Modelo Jurídico-Financeiro", modelo_de_negocio_path, :class=>"ui green button fluid" %>
     </div>
+</div>
 </div>

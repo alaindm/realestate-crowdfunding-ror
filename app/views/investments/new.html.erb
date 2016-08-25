@@ -2,7 +2,7 @@
 <% provide(:meta_desc, "Reserva de investimento crowdfunding na plataforma Imobank para Projeto") %>
 <% provide(:meta_keywords, "crowdfunding, imobiliário, investimento, cadastro, pedido, reserva, investidor, construção, projeto,") %>
 <% provide(:robots, "NOINDEX, NOFOLLOW") %>
-
+<div class="ui main container">
 <h1>Reserva de Investidor</h1>
 
 <% if logged_in? %>
@@ -20,3 +20,4 @@
         <%= f.submit "Confirmar reserva de investimento", class: "ui green inverted button" %>
     <% end %>
 <% end %>
+</div>
